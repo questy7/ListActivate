@@ -623,6 +623,54 @@ p  { color: var(--gray-600); line-height: 1.5; }
 .form-submit-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 8px; }
 .form-note { font-size: 0.8rem; color: var(--gray-400); }
 
+/* ===== CALENDAR EMBED ===== */
+.calendar-embed {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+.calendar-embed iframe,
+.calendar-embed > script + div {
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-xl);
+}
+.calendar-placeholder {
+  border: 2px dashed var(--gray-200);
+  border-radius: var(--radius-xl);
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-50);
+  text-align: center;
+  padding: 48px;
+}
+
+/* ===== CONTACT OR DIVIDER ===== */
+.contact-or-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 8px 24px;
+}
+.contact-or-divider::before,
+.contact-or-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--gray-200);
+}
+.contact-or-divider span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gray-400);
+  white-space: nowrap;
+}
+
 /* ===== ANIMATIONS ===== */
 .fade-up {
   opacity: 0;

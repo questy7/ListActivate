@@ -41,15 +41,49 @@
   </div>
 </section>
 
-<!-- ===== CONTACT BODY ===== -->
+<!-- ===== BOOKING CALENDAR ===== -->
 <section class="section">
+  <div class="container">
+
+    <!-- Section header -->
+    <div class="sec-header centered fade-up" style="margin-bottom:40px;">
+      <div class="badge">Free Discovery Call</div>
+      <h2>Pick a Time That Works for You</h2>
+      <p>Choose a slot below. We'll come prepared with a free analysis of your database reactivation opportunity — no obligation, no pitch deck.</p>
+    </div>
+
+    <!-- =====================================================
+         CALENDAR EMBED — paste your GoHighLevel embed code here.
+         Replace the placeholder div below with your iframe or
+         <script> tag from GHL: Calendars → Share → Embed Code
+         ===================================================== -->
+    <div class="calendar-embed fade-up d1">
+      <!-- PLACEHOLDER — replace this div with your GHL calendar embed -->
+      <div class="calendar-placeholder">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-400);margin-bottom:16px;">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <p style="font-size:.95rem;color:var(--gray-500);margin:0;">Calendar booking widget will appear here.</p>
+        <p style="font-size:.825rem;color:var(--gray-400);margin-top:6px;">Replace this block with your GoHighLevel embed code.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== DIVIDER ===== -->
+<div class="contact-or-divider">
+  <span>or send us a quick note</span>
+</div>
+
+<!-- ===== SIMPLE CONTACT FORM ===== -->
+<section class="section-sm">
   <div class="container">
     <div class="contact-grid">
 
-      <!-- Left — contact info + trust signals -->
+      <!-- Left — contact info -->
       <div class="fade-up">
-        <h3 style="margin-bottom:8px;">Get in Touch</h3>
-        <p style="margin-bottom:36px;font-size:.95rem;">We respond to every enquiry within one business day. For urgent matters, call or email directly.</p>
+        <h3 style="margin-bottom:20px;">Contact Details</h3>
 
         <div class="contact-info-item">
           <div class="contact-icon">
@@ -58,7 +92,7 @@
             </svg>
           </div>
           <div>
-            <h4>Email Us</h4>
+            <h4>Email</h4>
             <p><a href="mailto:support@sellflows.com" style="color:var(--blue);">support@sellflows.com</a></p>
           </div>
         </div>
@@ -70,7 +104,7 @@
             </svg>
           </div>
           <div>
-            <h4>Call Us</h4>
+            <h4>Phone</h4>
             <p><a href="tel:+18585857788" style="color:var(--blue);">(858) 585-7788</a></p>
             <p style="font-size:.8rem;color:var(--gray-400);margin-top:2px;">Mon – Fri, 9am – 6pm EST</p>
           </div>
@@ -87,31 +121,12 @@
             <p>United States — Remote-First</p>
           </div>
         </div>
-
-        <!-- Trust block -->
-        <div style="background:var(--gray-50);border:1px solid var(--gray-100);border-radius:var(--radius-lg);padding:28px;margin-top:16px;">
-          <h4 style="font-size:.9rem;margin-bottom:16px;color:var(--navy);">What Happens Next</h4>
-          <div style="display:flex;flex-direction:column;gap:14px;">
-            <div style="display:flex;gap:14px;align-items:flex-start;">
-              <div style="width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;">1</div>
-              <p style="font-size:.85rem;margin-top:3px;">We review your message and database details within one business day.</p>
-            </div>
-            <div style="display:flex;gap:14px;align-items:flex-start;">
-              <div style="width:26px;height:26px;border-radius:50%;background:var(--blue);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;">2</div>
-              <p style="font-size:.85rem;margin-top:3px;">We schedule a short call to understand your goals and existing setup.</p>
-            </div>
-            <div style="display:flex;gap:14px;align-items:flex-start;">
-              <div style="width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;">3</div>
-              <p style="font-size:.85rem;margin-top:3px;">We deliver a no-obligation reactivation opportunity analysis for your database.</p>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <!-- Right — form -->
+      <!-- Right — slim 3-field form -->
       <div class="form-card fade-up d1">
-        <h3 style="margin-bottom:6px;">Send Us a Message</h3>
-        <p style="font-size:.875rem;margin-bottom:28px;">Fill in the details below and we'll be in touch within one business day.</p>
+        <h3 style="margin-bottom:6px;">Send a Quick Note</h3>
+        <p style="font-size:.875rem;margin-bottom:24px;">Not ready to book yet? Drop us a message and we'll follow up within one business day.</p>
 
         <form class="contact-form" novalidate>
           <div class="form-row">
@@ -124,74 +139,20 @@
               <input type="text" id="last-name" name="last_name" placeholder="Smith" required />
             </div>
           </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Business Email <span style="color:var(--blue);">*</span></label>
-              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="(858) 585-7788" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="company">Company Name <span style="color:var(--blue);">*</span></label>
-              <input type="text" id="company" name="company" placeholder="Acme Corp" required />
-            </div>
-            <div class="form-group">
-              <label for="website">Website</label>
-              <input type="url" id="website" name="website" placeholder="https://yoursite.com" />
-            </div>
-          </div>
-
           <div class="form-group">
-            <label for="db-size">Approximate Database Size</label>
-            <select id="db-size" name="db_size">
-              <option value="" disabled selected>Select a range…</option>
-              <option value="under-1k">Under 1,000 contacts</option>
-              <option value="1k-10k">1,000 – 10,000 contacts</option>
-              <option value="10k-50k">10,000 – 50,000 contacts</option>
-              <option value="50k-250k">50,000 – 250,000 contacts</option>
-              <option value="250k+">250,000+ contacts</option>
-            </select>
+            <label for="email">Email <span style="color:var(--blue);">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" required />
           </div>
-
           <div class="form-group">
-            <label>Services You're Interested In</label>
-            <div class="form-checkboxes">
-              <label class="checkbox-item">
-                <input type="checkbox" name="services" value="email-reactivation" />
-                <span>Email Reactivation</span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="services" value="sms-reactivation" />
-                <span>SMS Reactivation</span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="services" value="ai-personalization" />
-                <span>AI-Powered Personalization</span>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="services" value="content-development" />
-                <span>Content Development (Email, SMS, Social, Blog)</span>
-              </label>
-            </div>
+            <label for="message">Message <span style="color:var(--blue);">*</span></label>
+            <textarea id="message" name="message" placeholder="Tell us about your database and what you're trying to achieve…" required></textarea>
           </div>
-
-          <div class="form-group">
-            <label for="message">Tell Us About Your Situation <span style="color:var(--blue);">*</span></label>
-            <textarea id="message" name="message" placeholder="What does your database look like? How long have contacts been dormant? What have you tried before? Any context helps us come prepared." required></textarea>
-          </div>
-
           <div class="form-submit-row">
             <button type="submit" class="btn btn-primary btn-lg" style="flex-shrink:0;">
               Send Message
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7z"/><path d="M22 2 11 13"/></svg>
             </button>
-            <p class="form-note">We respond within one business day. No spam, ever.</p>
+            <p class="form-note">No spam, ever.</p>
           </div>
         </form>
       </div>
