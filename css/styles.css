@@ -638,7 +638,7 @@ p  { color: var(--gray-600); line-height: 1.75; }
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-visual { display: none; }
+  .hero-visual { display: block; }
   .grid-4 { grid-template-columns: repeat(2,1fr); }
   .stats-grid { grid-template-columns: repeat(2,1fr); }
   .stat-item:nth-child(2) { border-right: none; }
