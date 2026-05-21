@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — ListActivate | Performance-Based, No Upfront Cost</title>
+  <meta name="description" content="ListActivate charges nothing upfront. Our performance-based model means you only pay when we deliver results from your database reactivation campaign. Book a free 15-minute call to learn more." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Pricing-page specific styles */
+    .pricing-hero {
+      background: var(--navy);
+      padding: 96px 0 80px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .pricing-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(57,180,228,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .pricing-hero .badge {
+      margin: 0 auto 24px;
+      display: inline-flex;
+    }
+    .pricing-hero h1 { color: var(--white); margin-bottom: 20px; }
+    .pricing-hero h1 em { font-style: normal; color: var(--blue); }
+    .pricing-hero p  { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 560px; margin: 0 auto 40px; }
+
+    /* Big zero badge */
+    .zero-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(57,180,228,0.12);
+      border: 1px solid rgba(57,180,228,0.3);
+      border-radius: var(--radius-xl);
+      padding: 32px 48px;
+      margin-bottom: 40px;
+    }
+    .zero-badge .zero-num {
+      font-size: clamp(3.5rem, 8vw, 5.5rem);
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -0.06em;
+      line-height: 1;
+    }
+    .zero-badge .zero-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      margin-top: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    /* How it works — dark cards */
+    .dark-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+    .dark-card-num {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: rgba(57,180,228,0.35);
+      letter-spacing: -0.05em;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .dark-card h3 { color: var(--white); margin-bottom: 10px; }
+    .dark-card p  { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+
+    /* Comparison table */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .compare-table th {
+      padding: 18px 24px;
+      text-align: left;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .compare-table th:first-child { background: var(--gray-50); color: var(--gray-500); width: 40%; }
+    .compare-table th.col-them  { background: var(--gray-100); color: var(--gray-500); }
+    .compare-table th.col-us    { background: var(--navy); color: var(--white); }
+    .compare-table td {
+      padding: 16px 24px;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child { color: var(--gray-700); font-weight: 500; background: var(--white); }
+    .compare-table td.col-them  { color: var(--gray-500); background: var(--gray-50); text-align: center; }
+    .compare-table td.col-us    { background: rgba(3,37,86,0.04); text-align: center; font-weight: 600; color: var(--navy); }
+    .check { color: #16a34a; font-size: 1.2rem; }
+    .cross { color: var(--gray-400); font-size: 1.1rem; }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid var(--gray-100);
+      padding: 28px 0;
+    }
+    .faq-item:first-child { padding-top: 0; }
+    .faq-item:last-child  { border-bottom: none; padding-bottom: 0; }
+    .faq-q {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .faq-a { font-size: 0.925rem; }
+
+    /* Call CTA block */
+    .call-cta {
+      background: var(--navy);
+      border-radius: var(--radius-xl);
+      padding: 80px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .call-cta::before {
+      content: '';
+      position: absolute;
+      top: -40%; left: -10%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(57,180,228,0.13) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .call-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -40%; right: -5%;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(57,180,228,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .call-cta .timer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(57,180,228,0.15);
+      border: 1px solid rgba(57,180,228,0.3);
+      border-radius: 100px;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 28px;
+    }
+    .call-cta h2 { color: var(--white); margin-bottom: 16px; font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+    .call-cta > p { color: rgba(255,255,255,0.65); max-width: 500px; margin: 0 auto 40px; font-size: 1.05rem; }
+    .call-points {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .call-point {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+    }
+    .call-point svg { color: var(--blue); flex-shrink: 0; }
+
+    @media (max-width: 768px) {
+      .call-cta { padding: 48px 28px; }
+      .compare-table th, .compare-table td { padding: 12px 14px; font-size: 0.8rem; }
+      .zero-badge { padding: 24px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://assets.cdn.filesafe.space/LdcuiH328WKijRn8EJ4u/media/69ee6bc705d4199001c540b1.png" alt="ListActivate" height="118" style="display:block;" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <a href="contact.html" class="btn btn-accent">Book a Call</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="pricing-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="badge">Performance-Based Pricing</div>
+    <h1>We Only Win<br><em>When You Win.</em></h1>
+    <p>No retainers. No setup fees. No risk. ListActivate operates on a pure performance model — you don't pay until your dormant database starts generating real revenue.</p>
+
+    <div class="zero-badge">
+      <div class="zero-num">$0</div>
+      <div class="zero-label">Upfront to Get Started</div>
+    </div>
+
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;">
+      <a href="contact.html" class="btn btn-accent btn-lg">Book Your Free 15-Minute Call</a>
+      <a href="#how-it-works" class="btn btn-outline-white btn-lg">How It Works</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="section section-navy" id="how-it-works">
+  <div class="container">
+    <div class="sec-header centered fade-up">
+      <div class="badge">The Model</div>
+      <h2>Simple. Aligned. Zero Risk.</h2>
+      <p>Performance pricing means our incentives are identical to yours. We succeed when you recover revenue — so we work like it.</p>
+    </div>
+    <div class="grid-3 fade-up d1">
+      <div class="dark-card">
+        <div class="dark-card-num">01</div>
+        <h3>We Audit Your Database</h3>
+        <p>We analyse your dormant contact list and identify your highest-value reactivation segments. This initial audit is completely free — no strings attached.</p>
+      </div>
+      <div class="dark-card">
+        <div class="dark-card-num">02</div>
+        <h3>We Build &amp; Launch</h3>
+        <p>Our team writes the copy, builds the sequences across email, SMS, and AI voice, and launches your win-back campaign — all at zero upfront cost to you.</p>
+      </div>
+      <div class="dark-card">
+        <div class="dark-card-num">03</div>
+        <h3>You Pay on Results</h3>
+        <p>We agree on a simple performance fee structure before we start. You only pay when the campaign delivers — whether that's revenue recovered, appointments booked, or reactivated leads. Your specific structure is discussed on your call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT'S INCLUDED ===== -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div class="fade-up">
+        <div class="badge">What You Get</div>
+        <h2 style="margin:16px 0 16px;">Everything Needed to<br>Reactivate Your List.</h2>
+        <p style="margin-bottom:28px;">Performance pricing doesn't mean a cut-down service. Every campaign includes our full stack — because the better the campaign, the better our results too.</p>
+        <a href="contact.html" class="btn btn-primary">Discuss Your Campaign</a>
+      </div>
+      <div class="fade-up d1">
+        <div style="display:flex;flex-direction:column;gap:0;">
+
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--gray-100);">
+            <div style="width:36px;height:36px;background:rgba(3,37,86,0.06);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#032556" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+            </div>
+            <div>
+              <h4 style="font-size:.95rem;margin-bottom:4px;">Email Reactivation Sequences</h4>
+              <p style="font-size:.85rem;">Multi-step behaviorally triggered win-back campaigns written and managed for you.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--gray-100);">
+            <div style="width:36px;height:36px;background:rgba(57,180,228,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#39b4e4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <div>
+              <h4 style="font-size:.95rem;margin-bottom:4px;">SMS &amp; Ringless Voicemail</h4>
+              <p style="font-size:.85rem;">High-open-rate SMS drips and voicemail drops to reach contacts who don't open email.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--gray-100);">
+            <div style="width:36px;height:36px;background:rgba(3,37,86,0.06);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#032556" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h4 style="font-size:.95rem;margin-bottom:4px;">AI Voice Outbound</h4>
+              <p style="font-size:.85rem;">AI calling agents that qualify leads and book appointments around the clock.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--gray-100);">
+            <div style="width:36px;height:36px;background:rgba(57,180,228,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#39b4e4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c2.5.5 4 2.5 4 4.5S18.5 14 17 15l-1 5H8l-1-5C5.5 14 4 12 4 10.5S5.5 6.5 8 6a4 4 0 0 1 4-4z"/></svg>
+            </div>
+            <div>
+              <h4 style="font-size:.95rem;margin-bottom:4px;">AI Copy &amp; Personalization</h4>
+              <p style="font-size:.85rem;">Every message personalized at scale using contact behavior and purchase signals.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--gray-100);">
+            <div style="width:36px;height:36px;background:rgba(3,37,86,0.06);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#032556" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+            </div>
+            <div>
+              <h4 style="font-size:.95rem;margin-bottom:4px;">Unified Messaging CRM</h4>
+              <p style="font-size:.85rem;">Full pipeline visibility across every channel — no lead falls through the cracks.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:20px 0;">
+            <div style="width:36px;height:36px;background:rgba(57,180,228,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#39b4e4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </div>
+            <div>
+              <h4 style="font-size:.95rem;margin-bottom:4px;">Ongoing Optimization</h4>
+              <p style="font-size:.85rem;">Continuous split testing and refinement — we keep improving because our fee depends on it.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARISON ===== -->
+<section class="section" style="background:var(--gray-50);border-top:1px solid var(--gray-100);border-bottom:1px solid var(--gray-100);">
+  <div class="container">
+    <div class="sec-header centered fade-up">
+      <div class="badge">Why It Matters</div>
+      <h2>Performance Pricing vs.<br>The Traditional Model</h2>
+      <p>Most agencies charge you whether they deliver or not. We don't.</p>
+    </div>
+    <div class="fade-up d1" style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="col-them">Traditional Agency</th>
+            <th class="col-us">ListActivate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Upfront retainer or setup fee</td>
+            <td class="col-them"><span class="cross">✕ &nbsp;Often $2k–$10k+</span></td>
+            <td class="col-us"><span class="check">✓ &nbsp;$0</span></td>
+          </tr>
+          <tr>
+            <td>Monthly fee regardless of results</td>
+            <td class="col-them"><span class="cross">✕ &nbsp;Yes, always</span></td>
+            <td class="col-us"><span class="check">✓ &nbsp;Results-only</span></td>
+          </tr>
+          <tr>
+            <td>Incentivized to drive your results</td>
+            <td class="col-them"><span class="cross">✕ &nbsp;Not really</span></td>
+            <td class="col-us"><span class="check">✓ &nbsp;Fully aligned</span></td>
+          </tr>
+          <tr>
+            <td>Campaign live within 24 hours</td>
+            <td class="col-them"><span class="cross">✕ &nbsp;Weeks of onboarding</span></td>
+            <td class="col-us"><span class="check">✓ &nbsp;24-hour launch</span></td>
+          </tr>
+          <tr>
+            <td>Full multi-channel coverage</td>
+            <td class="col-them"><span class="cross">✕ &nbsp;Usually one channel</span></td>
+            <td class="col-us"><span class="check">✓ &nbsp;Email, SMS, Voice, CRM</span></td>
+          </tr>
+          <tr>
+            <td>Financial risk to you</td>
+            <td class="col-them"><span class="cross">✕ &nbsp;High</span></td>
+            <td class="col-us"><span class="check">✓ &nbsp;Zero</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start;">
+      <div class="fade-up">
+        <div class="badge">FAQ</div>
+        <h2 style="margin:16px 0 16px;">Common Questions<br>About Our Model</h2>
+        <p style="margin-bottom:28px;">Still have questions? Everything is fully explained on your 15-minute call — no pressure, no pitch deck.</p>
+        <a href="contact.html" class="btn btn-primary">Book a 15-Min Call</a>
+      </div>
+      <div class="fade-up d1">
+        <div class="faq-item">
+          <div class="faq-q">What exactly does "performance-based" mean?</div>
+          <p class="faq-a">You pay a pre-agreed fee only when we deliver a defined result — typically revenue recovered, appointments booked, or reactivated leads. The exact structure depends on your business model and is set before we start anything. Nothing happens without your sign-off.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is there really zero upfront cost?</div>
+          <p class="faq-a">Yes. No setup fee, no deposit, no monthly retainer to get started. We invest our own time and resources to build and launch your campaign. Our income depends on your results, which is exactly how we want it.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if my database is old or messy?</div>
+          <p class="faq-a">That's what we do. We've reactivated lists that have been cold for years. During the free audit we'll assess the quality of your data and give you an honest picture of what's realistically recoverable before any agreement is made.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How long before I see results?</div>
+          <p class="faq-a">Campaigns go live within 24 hours of sign-off. Most clients see re-engagement activity within the first 48–72 hours. Revenue recovery timelines vary based on your sales cycle, but the pipeline starts moving fast.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What's the 15-minute call about?</div>
+          <p class="faq-a">It's a quick, no-obligation conversation to understand your database, your goals, and your business model. We use that to tell you honestly whether we're a fit and what kind of results you can expect — before anything is agreed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CALL CTA ===== -->
+<section class="section">
+  <div class="container">
+    <div class="call-cta fade-up">
+      <div class="timer-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Only 15 Minutes
+      </div>
+      <h2>Let's Talk About What's<br>Hiding in Your Database.</h2>
+      <p>A short call. Zero obligation. We'll tell you exactly what we think is recoverable from your list — and what it would take to go get it.</p>
+      <div class="call-points">
+        <div class="call-point">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Free database audit
+        </div>
+        <div class="call-point">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          No pitch deck
+        </div>
+        <div class="call-point">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          No commitment required
+        </div>
+        <div class="call-point">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          $0 upfront to start
+        </div>
+      </div>
+      <div style="position:relative;z-index:1;">
+        <a href="contact.html" class="btn btn-accent btn-lg">Book Your Free 15-Minute Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="https://assets.cdn.filesafe.space/LdcuiH328WKijRn8EJ4u/media/69ee6bc705d4199001c540b1.png" alt="ListActivate" height="36" style="display:block;filter:brightness(0) invert(1);" />
+        </div>
+        <p class="footer-tagline">We turn dormant contacts into active customers using precision email, SMS, and AI reactivation campaigns.</p>
+        <a href="contact.html" class="btn btn-accent" style="font-size:.8rem;padding:9px 18px;">Book a Call</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul class="footer-links">
+          <li><a href="index.html#services">Email Reactivation</a></li>
+          <li><a href="index.html#services">SMS Reactivation</a></li>
+          <li><a href="index.html#services">AI Personalization</a></li>
+          <li><a href="index.html#services">Content Development</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:support@sellflows.com">support@sellflows.com</a></li>
+          <li><a href="tel:+18585857788">(858) 585-7788</a></li>
+          <li><a href="contact.html">Book a Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ListActivate. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
