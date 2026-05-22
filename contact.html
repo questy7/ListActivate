@@ -56,6 +56,8 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://link.sellflows.com" />
+  <link rel="dns-prefetch" href="//link.sellflows.com" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="contact-page">
@@ -123,8 +125,12 @@
       <p>Choose a slot below. We'll come prepared with a free analysis of your database reactivation opportunity — no obligation, no pitch deck.</p>
     </div>
 
-    <div class="calendar-embed fade-up d1">
-      <iframe src="https://link.sellflows.com/widget/booking/vpoj33Xt8w0iIZ9bnDEF" style="width:100%;border:none;overflow:hidden;min-height:700px;border-radius:12px;" scrolling="no" id="vpoj33Xt8w0iIZ9bnDEF_1779401772255"></iframe>
+    <div class="calendar-embed fade-up d1 calendar-loading" id="cal-wrap">
+      <div class="calendar-loading-overlay" id="cal-loader">
+        <div class="calendar-loading-spinner"></div>
+        <p>Loading your calendar&hellip;</p>
+      </div>
+      <iframe src="https://link.sellflows.com/widget/booking/vpoj33Xt8w0iIZ9bnDEF" style="width:100%;border:none;overflow:hidden;min-height:700px;border-radius:12px;" scrolling="no" id="vpoj33Xt8w0iIZ9bnDEF_1779401772255" onload="setTimeout(()=>document.getElementById('cal-loader').classList.add('hidden'),800)"></iframe>
       <script src="https://link.sellflows.com/js/form_embed.js" type="text/javascript"></script>
     </div>
 

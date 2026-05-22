@@ -102,7 +102,7 @@ document.body.insertAdjacentHTML('beforeend', `
           id="vpoj33Xt8w0iIZ9bnDEF_1779401772255"
           scrolling="no"
           style="width:100%;min-height:700px;border:none;display:block;"
-          onload="document.getElementById('booking-loader').classList.add('hidden')">
+          onload="setTimeout(()=>document.getElementById('booking-loader').classList.add('hidden'),800)">
         </iframe>
       </div>
     </div>
@@ -139,7 +139,7 @@ document.body.insertAdjacentHTML('beforeend', `
           data-form-id="nfDY4wsE03YsrhDbbFMj"
           title="List Activate Contact"
           style="width:100%;height:1153px;border:none;display:block;"
-          onload="document.getElementById('form-loader').classList.add('hidden')">
+          onload="setTimeout(()=>document.getElementById('form-loader').classList.add('hidden'),800)">
         </iframe>
       </div>
     </div>
