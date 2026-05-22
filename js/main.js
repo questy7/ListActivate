@@ -176,12 +176,7 @@ document.addEventListener('keydown', (e) => {
 // Contact page has calendar + form inline — skip modal wiring there.
 const isContactPage = document.body.classList.contains('contact-page');
 
-const SMS_PHRASES = [
-  'Get an SMS Demo',
-  'Get a Personalized SMS Demo',
-  'Get a personalized SMS demo',
-  'personalized SMS demo',
-];
+const SMS_PHRASES = [];
 
 if (!isContactPage) {
 
