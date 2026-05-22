@@ -929,6 +929,8 @@ p  { color: var(--gray-600); line-height: 1.5; }
 .fade-up.d4 { transition-delay: 0.32s; }
 
 /* ===== RESPONSIVE ===== */
+html { overflow-x: hidden; }
+
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-visual { display: block; }
@@ -939,6 +941,7 @@ p  { color: var(--gray-600); line-height: 1.5; }
   .story-grid { grid-template-columns: 1fr; gap: 48px; }
 }
 @media (max-width: 768px) {
+  .hero-visual { display: none; }
   .nav-links  { display: none; }
   .nav-toggle { display: flex; }
   .nav.open .nav-links {
