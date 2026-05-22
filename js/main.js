@@ -21,6 +21,12 @@ if (toggle) {
     const open = nav.classList.contains('open');
     toggle.setAttribute('aria-expanded', open);
     document.body.style.overflow = open ? 'hidden' : '';
+    // Pin menu to actual rendered nav bottom — eliminates gap from CSS var mismatch
+    if (open) {
+      const navBottom = nav.getBoundingClientRect().bottom;
+      const links = nav.querySelector('.nav-links');
+      if (links) links.style.top = navBottom + 'px';
+    }
     const spans = toggle.querySelectorAll('span');
     if (open) {
       spans[0].style.transform = 'translateY(7px) rotate(45deg)';
