@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://listactivate.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://listactivate.com/pricing</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://listactivate.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://listactivate.com/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
+  <!-- Core pages -->
+  <url><loc>https://listactivate.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://listactivate.com/pricing</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://listactivate.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://listactivate.com/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Services -->
+  <url><loc>https://listactivate.com/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://listactivate.com/services/email-reactivation</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://listactivate.com/services/sms-reactivation</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://listactivate.com/services/ai-voice-outbound</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://listactivate.com/services/content-generation</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <!-- Industries -->
+  <url><loc>https://listactivate.com/industries</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://listactivate.com/industries/mass-tort-law-firms</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://listactivate.com/industries/business-coaching</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://listactivate.com/industries/real-estate-mortgage</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://listactivate.com/industries/financial-services-insurance</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://listactivate.com/industries/med-spa-aesthetics</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://listactivate.com/industries/home-services</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
 </urlset>
