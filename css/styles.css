@@ -477,9 +477,9 @@ p  { color: var(--gray-600); line-height: 1.5; }
   background-color: #021740;
   background-image:
     radial-gradient(circle, rgba(57,180,228,0.28) 1.5px, transparent 1.5px),
-    radial-gradient(ellipse 120% 60% at 50% -5%, rgba(57,180,228,0.42) 0%, transparent 62%),
-    radial-gradient(ellipse 50% 35% at 15% 110%, rgba(57,180,228,0.14) 0%, transparent 50%),
-    linear-gradient(180deg, #0d4070 0%, #032556 50%, #021740 100%);
+    radial-gradient(ellipse 120% 60% at 50% 110%, rgba(57,180,228,0.42) 0%, transparent 62%),
+    radial-gradient(ellipse 50% 35% at 85% -10%, rgba(57,180,228,0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #021740 0%, #032556 50%, #0d4070 100%);
   background-size: 34px 34px, 100% 100%, 100% 100%, 100% 100%;
   padding: 100px 0 88px;
   text-align: center;
