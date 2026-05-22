@@ -203,7 +203,7 @@ p  { color: var(--gray-600); line-height: 1.5; }
   .container { padding: 0 16px; }
   .badge { white-space: normal; text-align: center; }
   .hero-sub { font-size: 1rem; }
-  #my-widget-iframe { height: 420px !important; }
+  #my-widget-iframe { height: 350px !important; }
 }
 .hero-stat-value {
   font-size: 1.9rem;
