@@ -474,16 +474,18 @@ p  { color: var(--gray-600); line-height: 1.5; }
 
 /* ===== SERVICE / INDUSTRY GRADIENT HERO ===== */
 .service-hero {
-  background-color: var(--navy);
+  background-color: #021740;
   background-image:
-    radial-gradient(circle, rgba(57,180,228,0.1) 1px, transparent 1px),
-    radial-gradient(ellipse 80% 65% at 90% -10%, rgba(57,180,228,0.22) 0%, transparent 55%),
-    radial-gradient(ellipse 55% 65% at -5% 115%, rgba(57,180,228,0.1) 0%, transparent 50%);
-  background-size: 28px 28px, 100% 100%, 100% 100%;
+    radial-gradient(circle, rgba(57,180,228,0.22) 1px, transparent 1px),
+    radial-gradient(ellipse 60% 100% at 95% 50%, rgba(57,180,228,0.45) 0%, transparent 58%),
+    radial-gradient(ellipse 40% 55% at 0% 100%, rgba(57,180,228,0.18) 0%, transparent 50%),
+    linear-gradient(155deg, #021740 0%, #032556 55%, #0b3d7a 100%);
+  background-size: 28px 28px, 100% 100%, 100% 100%, 100% 100%;
   padding: 100px 0 88px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(57,180,228,0.25);
 }
 .service-hero .badge {
   background: rgba(57,180,228,0.15);
