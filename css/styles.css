@@ -623,6 +623,16 @@ p  { color: var(--gray-600); line-height: 1.5; }
 
 /* ===== NAV DROPDOWNS ===== */
 .has-dropdown { position: relative; }
+/* Invisible bridge fills the gap so hover isn't lost moving into the menu */
+.has-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 14px;
+  display: block;
+}
 .has-dropdown > a::after {
   content: '▾';
   margin-left: 4px;
