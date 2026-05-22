@@ -201,7 +201,7 @@ p  { color: var(--gray-600); line-height: 1.5; }
 }
 @media (max-width: 768px) {
   #my-widget-iframe { height: 480px !important; }
-  .hero { padding: 24px 0 80px; }
+  .hero { padding: 8px 0 80px; }
   .hero-inner { gap: 16px; }
   .hero-visual { padding: 0; margin-top: 0; }
   .hero-visual > div:first-child { margin-bottom: 6px !important; }
@@ -972,6 +972,10 @@ html { overflow-x: hidden; }
   .nav-logo img { height: 108px !important; }
   .nav-links { gap: 20px; }
   .nav-links a { font-size: .82rem; }
+}
+@media (max-width: 768px) {
+  :root { --nav-h: 90px; }
+  .nav-logo img { height: 80px !important; }
 }
 
 @media (max-width: 1024px) {
