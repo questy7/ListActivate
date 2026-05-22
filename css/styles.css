@@ -201,7 +201,7 @@ p  { color: var(--gray-600); line-height: 1.5; }
 }
 @media (max-width: 768px) {
   #my-widget-iframe { height: 480px !important; }
-  .hero { padding: 48px 0 20px; }
+  .hero { padding: 48px 0 80px; }
   .hero-inner { gap: 16px; }
   .hero-visual { padding: 0; margin-top: 0; }
   .hero-visual > div:first-child { margin-bottom: 6px !important; }
@@ -941,12 +941,17 @@ p  { color: var(--gray-600); line-height: 1.5; }
 /* ===== RESPONSIVE ===== */
 html { overflow-x: hidden; }
 
+/* Nav CTA button: hidden by default, only shown at wide desktop */
+.nav-cta-btn { display: none !important; }
+@media (min-width: 1061px) {
+  .nav-cta-btn { display: flex !important; }
+}
+
 @media (max-width: 1060px) {
   :root { --nav-h: 120px; }
   .nav-logo img { height: 108px !important; }
   .nav-links { gap: 20px; }
   .nav-links a { font-size: .82rem; }
-  .nav-cta-btn { display: none; }
 }
 
 @media (max-width: 1024px) {
