@@ -20,6 +20,7 @@ if (toggle) {
     nav.classList.toggle('open');
     const open = nav.classList.contains('open');
     toggle.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
     const spans = toggle.querySelectorAll('span');
     if (open) {
       spans[0].style.transform = 'translateY(7px) rotate(45deg)';
@@ -32,7 +33,10 @@ if (toggle) {
     }
   });
   document.querySelectorAll('.nav-links a').forEach((a) => {
-    a.addEventListener('click', () => nav.classList.remove('open'));
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
   });
 }
 

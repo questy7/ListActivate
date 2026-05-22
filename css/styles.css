@@ -991,13 +991,35 @@ html { overflow-x: hidden; }
     flex-direction: column;
     position: fixed;
     top: var(--nav-h);
-    left: 0; right: 0;
-    background: var(--navy);
-    padding: 24px;
-    gap: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    box-shadow: var(--shadow-md);
+    left: 0; right: 0; bottom: 0;
+    background: #021d42;
+    padding: 32px 24px 48px;
+    gap: 4px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     z-index: 99;
+  }
+  .nav.open .nav-links > li > a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .nav.open .dropdown-menu {
+    position: static;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 4px 0 8px 16px;
+  }
+  .nav.open .dropdown-menu::before { display: none; }
+  .nav.open .dropdown-menu a {
+    font-size: .95rem;
+    padding: 8px 0;
+    color: rgba(255,255,255,0.6) !important;
   }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
