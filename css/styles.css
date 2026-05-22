@@ -221,7 +221,7 @@ p  { color: var(--gray-600); line-height: 1.5; }
 }
 @media (max-width: 768px) {
   #my-widget-iframe { height: 480px !important; }
-  .hero { padding: 20px 0 80px; }
+  .hero { padding: 28px 0 80px; }
   .hero-inner { gap: 16px; }
   .hero-visual { padding: 0; margin-top: 0; }
   .hero-visual > div:first-child { margin-bottom: 6px !important; }
@@ -238,9 +238,9 @@ p  { color: var(--gray-600); line-height: 1.5; }
   .service-hero h1 { font-size: 1.85rem !important; }
 }
 
-/* Reduce service-hero top padding — same fix as home page */
+/* Reduce service-hero top padding on mobile */
 @media (max-width: 768px) {
-  .service-hero { padding: 20px 0 64px; }
+  .service-hero { padding: 16px 0 56px !important; }
 }
 
 /* Collapse all inline 2-column grids on mobile — covers service + industry pages */
@@ -1067,7 +1067,7 @@ html { overflow-x: hidden; }
   .footer-grid { grid-template-columns: 1fr; }
   .cta-banner { padding: 48px 28px; }
   .form-card { padding: 32px 24px; }
-  .hero { padding: 20px 0 80px; }
+  .hero { padding: 28px 0 80px; }
   .section { padding: 64px 0; }
   .hero-stats { gap: 28px; }
   .stats-grid { grid-template-columns: repeat(2,1fr); }
