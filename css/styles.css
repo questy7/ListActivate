@@ -188,12 +188,12 @@ p  { color: var(--gray-600); line-height: 1.5; }
 .hero-stat-label { color: rgba(255,255,255,0.55); }
 .hero-stats { border-top-color: rgba(255,255,255,0.12); }
 
-/* Mobile-only CTA — appears above headline so it's always visible */
-.mobile-cta-top { display: none; }
+/* Mobile-only CTA — between headline and sub-text */
+.mobile-cta-mid { display: none; }
 @media (max-width: 768px) {
-  .mobile-cta-top {
+  .mobile-cta-mid {
     display: inline-flex;
-    margin: 14px 0 6px;
+    margin: 20px 0 4px;
   }
 }
 .hero-inner {
