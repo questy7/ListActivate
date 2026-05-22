@@ -80,9 +80,6 @@ if (form) {
 // =============================================
 const CLOSE_ICON = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
 
-// Inject both modals into the DOM.
-// GHL's form_embed.js identifies iframes by their original IDs and data attributes —
-// using the exact IDs from the embed codes is required for the widgets to render.
 document.body.insertAdjacentHTML('beforeend', `
 
   <!-- BOOKING CALENDAR MODAL -->
@@ -96,27 +93,36 @@ document.body.insertAdjacentHTML('beforeend', `
         <button class="booking-modal-close" id="booking-close-btn" aria-label="Close">${CLOSE_ICON}</button>
       </div>
       <div class="booking-modal-body">
+        <div class="modal-loader" id="booking-loader">
+          <div class="modal-loader-spinner"></div>
+          <div class="modal-loader-text">Loading your calendar&hellip;</div>
+        </div>
         <iframe
           src="https://link.sellflows.com/widget/booking/vpoj33Xt8w0iIZ9bnDEF"
           id="vpoj33Xt8w0iIZ9bnDEF_1779401772255"
           scrolling="no"
-          style="width:100%;min-height:700px;border:none;display:block;">
+          style="width:100%;min-height:700px;border:none;display:block;"
+          onload="document.getElementById('booking-loader').classList.add('hidden')">
         </iframe>
       </div>
     </div>
   </div>
 
-  <!-- CONTACT FORM MODAL (SMS Demo / Ask a Question) -->
+  <!-- CONTACT FORM MODAL -->
   <div class="booking-modal" id="form-modal" role="dialog" aria-modal="true" aria-labelledby="form-modal-title">
     <div class="booking-modal-inner">
       <div class="booking-modal-header">
         <div>
           <div class="booking-modal-label">Free &middot; No Commitment</div>
-          <div class="booking-modal-title" id="form-modal-title">Get an SMS Demo or Ask a Question</div>
+          <div class="booking-modal-title" id="form-modal-title">Ask a Question</div>
         </div>
         <button class="booking-modal-close" id="form-close-btn" aria-label="Close">${CLOSE_ICON}</button>
       </div>
       <div class="booking-modal-body">
+        <div class="modal-loader" id="form-loader">
+          <div class="modal-loader-spinner"></div>
+          <div class="modal-loader-text">Loading&hellip;</div>
+        </div>
         <iframe
           src="https://link.sellflows.com/widget/form/nfDY4wsE03YsrhDbbFMj"
           id="inline-nfDY4wsE03YsrhDbbFMj"
@@ -132,7 +138,8 @@ document.body.insertAdjacentHTML('beforeend', `
           data-layout-iframe-id="inline-nfDY4wsE03YsrhDbbFMj"
           data-form-id="nfDY4wsE03YsrhDbbFMj"
           title="List Activate Contact"
-          style="width:100%;height:1153px;border:none;display:block;">
+          style="width:100%;height:1153px;border:none;display:block;"
+          onload="document.getElementById('form-loader').classList.add('hidden')">
         </iframe>
       </div>
     </div>
@@ -146,7 +153,7 @@ ghlScript.src  = 'https://link.sellflows.com/js/form_embed.js';
 ghlScript.type = 'text/javascript';
 document.body.appendChild(ghlScript);
 
-// --- Modal open / close helpers ---
+// Modal open / close helpers
 const bookingModal = document.getElementById('booking-modal');
 const formModal    = document.getElementById('form-modal');
 
@@ -172,17 +179,11 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// --- Wire buttons ---
-// Contact page has calendar + form inline — skip modal wiring there.
+// Wire buttons — contact page skipped (has inline calendar + form)
 const isContactPage = document.body.classList.contains('contact-page');
-
-const SMS_PHRASES = [];
+const SMS_PHRASES   = [];
 
 if (!isContactPage) {
-
-  // Any .btn linking to contact.html → modal.
-  // SMS-labelled buttons → form modal. Everything else → booking modal.
-  // Nav "Contact" link is a plain <a> without .btn, so it's unaffected.
   const CONTACT_HREFS = ['contact.html', '../contact.html', '/contact'];
 
   document.querySelectorAll('a.btn').forEach((el) => {
@@ -190,17 +191,14 @@ if (!isContactPage) {
     if (CONTACT_HREFS.some((h) => href.endsWith(h))) {
       el.addEventListener('click', (e) => {
         e.preventDefault();
-        const txt = el.textContent.trim();
-        const isSms = SMS_PHRASES.some((p) => txt.includes(p));
+        const isSms = SMS_PHRASES.some((p) => el.textContent.trim().includes(p));
         openModal(isSms ? formModal : bookingModal);
       });
     }
   });
 
-  // Plain text SMS demo links (non-btn) → form modal
   document.querySelectorAll('a:not(.btn)').forEach((el) => {
-    const txt = el.textContent.trim();
-    if (SMS_PHRASES.some((p) => txt.includes(p))) {
+    if (SMS_PHRASES.some((p) => el.textContent.trim().includes(p))) {
       el.addEventListener('click', (e) => { e.preventDefault(); openModal(formModal); });
     }
   });
