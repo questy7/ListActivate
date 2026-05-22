@@ -201,7 +201,7 @@ p  { color: var(--gray-600); line-height: 1.5; }
 }
 @media (max-width: 768px) {
   #my-widget-iframe { height: 480px !important; }
-  .hero { padding: 48px 0 80px; }
+  .hero { padding: 24px 0 80px; }
   .hero-inner { gap: 16px; }
   .hero-visual { padding: 0; margin-top: 0; }
   .hero-visual > div:first-child { margin-bottom: 6px !important; }
