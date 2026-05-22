@@ -476,11 +476,11 @@ p  { color: var(--gray-600); line-height: 1.5; }
 .service-hero {
   background-color: #021740;
   background-image:
-    radial-gradient(circle, rgba(57,180,228,0.22) 1px, transparent 1px),
-    radial-gradient(ellipse 60% 100% at 95% 50%, rgba(57,180,228,0.45) 0%, transparent 58%),
-    radial-gradient(ellipse 40% 55% at 0% 100%, rgba(57,180,228,0.18) 0%, transparent 50%),
-    linear-gradient(155deg, #021740 0%, #032556 55%, #0b3d7a 100%);
-  background-size: 28px 28px, 100% 100%, 100% 100%, 100% 100%;
+    radial-gradient(circle, rgba(57,180,228,0.28) 1.5px, transparent 1.5px),
+    radial-gradient(ellipse 120% 60% at 50% -5%, rgba(57,180,228,0.42) 0%, transparent 62%),
+    radial-gradient(ellipse 50% 35% at 15% 110%, rgba(57,180,228,0.14) 0%, transparent 50%),
+    linear-gradient(180deg, #0d4070 0%, #032556 50%, #021740 100%);
+  background-size: 34px 34px, 100% 100%, 100% 100%, 100% 100%;
   padding: 100px 0 88px;
   text-align: center;
   position: relative;
