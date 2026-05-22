@@ -161,20 +161,40 @@ p  { color: var(--gray-600); line-height: 1.5; }
   text-transform: uppercase;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO — dark gradient (matches service pages) ===== */
 .hero {
-  background: var(--white);
+  background-color: #021740;
+  background-image:
+    radial-gradient(circle, rgba(57,180,228,0.18) 1.5px, transparent 1.5px),
+    radial-gradient(ellipse 120% 60% at 50% 110%, rgba(57,180,228,0.38) 0%, transparent 62%),
+    radial-gradient(ellipse 40% 35% at 85% -5%, rgba(57,180,228,0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #021740 0%, #032556 55%, #0d4070 100%);
+  background-size: 34px 34px, 100% 100%, 100% 100%, 100% 100%;
   padding: 64px 0 72px;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(57,180,228,0.2);
 }
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 55% at 65% -5%, rgba(57,180,228,0.07) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 40% at 95% 95%, rgba(3,37,86,0.04) 0%, transparent 60%);
-  pointer-events: none;
+.hero-bg { display: none; }
+.hero h1 { color: var(--white); }
+.hero h1 em { color: var(--blue); }
+.hero .hero-sub { color: rgba(255,255,255,0.72); }
+.hero .badge {
+  background: rgba(57,180,228,0.15);
+  color: var(--blue);
+  border-color: #39b4e4;
+}
+.hero-stat-value { color: var(--white); }
+.hero-stat-label { color: rgba(255,255,255,0.55); }
+.hero-stats { border-top-color: rgba(255,255,255,0.12); }
+
+/* Mobile-only CTA — appears above headline so it's always visible */
+.mobile-cta-top { display: none; }
+@media (max-width: 768px) {
+  .mobile-cta-top {
+    display: inline-flex;
+    margin: 14px 0 6px;
+  }
 }
 .hero-inner {
   display: grid;
@@ -214,6 +234,13 @@ p  { color: var(--gray-600); line-height: 1.5; }
   .badge svg { display: none; }
   .hero-sub { font-size: 1rem; }
   #my-widget-iframe { height: 420px !important; }
+  h1 { font-size: 1.85rem !important; line-height: 1.1; }
+  .service-hero h1 { font-size: 1.85rem !important; }
+}
+
+/* Reduce service-hero top padding — same fix as home page */
+@media (max-width: 768px) {
+  .service-hero { padding: 20px 0 64px; }
 }
 
 /* Collapse all inline 2-column grids on mobile — covers service + industry pages */
