@@ -191,10 +191,10 @@ p  { color: var(--gray-600); line-height: 1.5; }
 /* Mobile-only CTA — between headline and sub-text */
 .mobile-cta-mid { display: none; }
 @media (max-width: 768px) {
-  .mobile-cta-mid {
-    display: inline-flex;
-    margin: 20px 0 4px;
-  }
+  .mobile-cta-mid { display: inline-flex; margin: 20px 0 20px; }
+  /* Hide original CTA rows on mobile where mid-CTA replaces them */
+  .hero-ctas { display: none !important; }
+  .hero-cta-row { display: none !important; }
 }
 .hero-inner {
   display: grid;
