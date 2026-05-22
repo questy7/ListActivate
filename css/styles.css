@@ -201,7 +201,10 @@ p  { color: var(--gray-600); line-height: 1.5; }
 }
 @media (max-width: 768px) {
   #my-widget-iframe { height: 320px !important; }
-  .hero-visual { padding: 0; margin-top: 16px; }
+  .hero { padding: 48px 0 20px; }
+  .hero-inner { gap: 16px; }
+  .hero-visual { padding: 0; margin-top: 0; }
+  .hero-visual > div:first-child { margin-bottom: 6px !important; }
 }
 @media (max-width: 480px) {
   .hero-stats { flex-wrap: wrap; gap: 24px; }
