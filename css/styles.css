@@ -472,6 +472,41 @@ p  { color: var(--gray-600); line-height: 1.5; }
 }
 .footer-bottom-links a:hover { color: var(--white); }
 
+/* ===== SERVICE / INDUSTRY GRADIENT HERO ===== */
+.service-hero {
+  background-color: var(--navy);
+  background-image:
+    radial-gradient(circle, rgba(57,180,228,0.1) 1px, transparent 1px),
+    radial-gradient(ellipse 80% 65% at 90% -10%, rgba(57,180,228,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 65% at -5% 115%, rgba(57,180,228,0.1) 0%, transparent 50%);
+  background-size: 28px 28px, 100% 100%, 100% 100%;
+  padding: 100px 0 88px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.service-hero .badge {
+  background: rgba(57,180,228,0.15);
+  color: var(--blue);
+  border-color: rgba(57,180,228,0.35);
+  margin-bottom: 22px;
+}
+.service-hero h1 {
+  color: var(--white);
+  max-width: 780px;
+  margin: 0 auto 20px;
+}
+.service-hero p {
+  color: rgba(255,255,255,0.72);
+}
+.service-hero .hero-cta-row {
+  margin-top: 36px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* ===== PAGE HERO ===== */
 .page-hero {
   background: var(--white);
