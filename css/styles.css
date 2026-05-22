@@ -1040,7 +1040,7 @@ html { overflow-x: hidden; }
   .footer-grid { grid-template-columns: 1fr; }
   .cta-banner { padding: 48px 28px; }
   .form-card { padding: 32px 24px; }
-  .hero { padding: 64px 0 56px; }
+  .hero { padding: 8px 0 80px; }
   .section { padding: 64px 0; }
   .hero-stats { gap: 28px; }
   .stats-grid { grid-template-columns: repeat(2,1fr); }
