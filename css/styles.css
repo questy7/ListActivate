@@ -200,7 +200,7 @@ p  { color: var(--gray-600); line-height: 1.5; }
   border-top: 1px solid var(--gray-100);
 }
 @media (max-width: 768px) {
-  #my-widget-iframe { height: 320px !important; }
+  #my-widget-iframe { height: 480px !important; }
   .hero { padding: 48px 0 20px; }
   .hero-inner { gap: 16px; }
   .hero-visual { padding: 0; margin-top: 0; }
@@ -212,7 +212,7 @@ p  { color: var(--gray-600); line-height: 1.5; }
   .container { padding: 0 16px; }
   .badge { white-space: normal; text-align: center; }
   .hero-sub { font-size: 1rem; }
-  #my-widget-iframe { height: 280px !important; }
+  #my-widget-iframe { height: 420px !important; }
 }
 .hero-stat-value {
   font-size: 1.9rem;
