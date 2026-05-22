@@ -203,6 +203,7 @@ p  { color: var(--gray-600); line-height: 1.5; }
   .container { padding: 0 16px; }
   .badge { white-space: normal; text-align: center; }
   .hero-sub { font-size: 1rem; }
+  #my-widget-iframe { height: 420px !important; }
 }
 .hero-stat-value {
   font-size: 1.9rem;
@@ -941,7 +942,6 @@ html { overflow-x: hidden; }
   .story-grid { grid-template-columns: 1fr; gap: 48px; }
 }
 @media (max-width: 768px) {
-  .hero-visual { display: none; }
   .nav-links  { display: none; }
   .nav-toggle { display: flex; }
   .nav.open .nav-links {
