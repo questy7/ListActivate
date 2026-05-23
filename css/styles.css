@@ -200,7 +200,7 @@ p  { color: var(--gray-600); line-height: 1.5; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-  align-items: center;
+  align-items: start;
 }
 .hero-content { position: relative; }
 .hero-content .badge { margin-bottom: 22px; }
