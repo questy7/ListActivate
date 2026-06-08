@@ -206,27 +206,23 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Wire buttons — contact page skipped (has inline calendar + form)
-const isContactPage = document.body.classList.contains('contact-page');
+// Wire Book a Call buttons to modal on all pages
 const SMS_PHRASES   = [];
+const CONTACT_HREFS = ['contact.html', '../contact.html', '/contact'];
 
-if (!isContactPage) {
-  const CONTACT_HREFS = ['contact.html', '../contact.html', '/contact'];
+document.querySelectorAll('a.btn').forEach((el) => {
+  const href = (el.getAttribute('href') || '').replace(/\?.*$/, '');
+  if (CONTACT_HREFS.some((h) => href.endsWith(h))) {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isSms = SMS_PHRASES.some((p) => el.textContent.trim().includes(p));
+      openModal(isSms ? formModal : bookingModal);
+    });
+  }
+});
 
-  document.querySelectorAll('a.btn').forEach((el) => {
-    const href = (el.getAttribute('href') || '').replace(/\?.*$/, '');
-    if (CONTACT_HREFS.some((h) => href.endsWith(h))) {
-      el.addEventListener('click', (e) => {
-        e.preventDefault();
-        const isSms = SMS_PHRASES.some((p) => el.textContent.trim().includes(p));
-        openModal(isSms ? formModal : bookingModal);
-      });
-    }
-  });
-
-  document.querySelectorAll('a:not(.btn)').forEach((el) => {
-    if (SMS_PHRASES.some((p) => el.textContent.trim().includes(p))) {
-      el.addEventListener('click', (e) => { e.preventDefault(); openModal(formModal); });
-    }
-  });
-}
+document.querySelectorAll('a:not(.btn)').forEach((el) => {
+  if (SMS_PHRASES.some((p) => el.textContent.trim().includes(p))) {
+    el.addEventListener('click', (e) => { e.preventDefault(); openModal(formModal); });
+  }
+});
